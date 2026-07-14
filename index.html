@@ -161,7 +161,10 @@
         <button data-a="ceo" class="on">Co-founder / CEO</button>
         <button data-a="investor">Investor</button>
       </div>
-      <a class="btn" id="liveLink" href="#" target="_blank" rel="noopener">Open live app ↗</a>
+      <span style="display:inline-flex;flex-direction:column;align-items:flex-end;gap:2px">
+        <a class="btn" id="liveLink" href="#" target="_blank" rel="noopener">Open live app ↗</a>
+        <span id="livePw" class="chip" style="display:none;padding:2px 9px;font-size:.66rem"></span>
+      </span>
       <button class="btn ghost" id="themeBtn">◐ Theme</button>
     </div>
   </header>
@@ -248,7 +251,8 @@
 <script>
 /* ===================== configurable links ===================== */
 const LINKS = {
-  liveApp: '#',   // ← set to your deployed Replit URL, e.g. https://your-app.replit.app
+  liveApp: 'https://still-survey--faarisaahmed.replit.app/',
+  liveAppPassword: 'mentalhealthsurvey',   // site password shown to the presenter
   github:  'https://github.com/faarisaahmed/still-survey'
 };
 
@@ -412,7 +416,10 @@ document.querySelectorAll('#aud button').forEach(b=> b.onclick=()=>{
   document.querySelectorAll('#aud button').forEach(x=>x.classList.toggle('on',x===b));
   renderTalking(); renderDemo();
 });
-(function(){ const a=$('liveLink'); a.href=LINKS.liveApp; if(LINKS.liveApp==='#'){ a.textContent='Set live app URL'; a.style.opacity=.6; } })();
+(function(){ const a=$('liveLink'); a.href=LINKS.liveApp;
+  if(!LINKS.liveApp || LINKS.liveApp==='#'){ a.textContent='Set live app URL'; a.style.opacity=.6; }
+  if(LINKS.liveAppPassword){ const p=$('livePw'); p.textContent='password: '+LINKS.liveAppPassword; p.style.display=''; a.title='Site password: '+LINKS.liveAppPassword; }
+})();
 (function initTheme(){ const root=document.documentElement, saved=localStorage.getItem('pitch-theme');
   if(saved==='dark'||(!saved&&matchMedia('(prefers-color-scheme: dark)').matches)) root.classList.add('dark');
   $('themeBtn').onclick=()=>{ root.classList.toggle('dark'); localStorage.setItem('pitch-theme', root.classList.contains('dark')?'dark':'light'); }; })();
