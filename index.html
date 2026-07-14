@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AdaB Health · Program Overview</title>
+<title>AdaB Health · Investor & Stakeholder Overview</title>
 <style>
   :root{
     --bg1:#eaf3f2; --bg2:#e8eef7; --bg3:#f3eef6;
@@ -34,26 +34,41 @@
     background-attachment:fixed; min-height:100vh; -webkit-font-smoothing:antialiased; line-height:1.5;
   }
   .serif{font-family:"Iowan Old Style","Palatino Linotype",Georgia,ui-serif,serif}
-  .wrap{max-width:1120px;margin:0 auto;padding:26px 22px 72px}
+  .wrap{max-width:1120px;margin:0 auto;padding:22px 22px 80px}
 
-  header.top{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:8px}
+  header.top{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:26px}
   .brand{display:flex;align-items:center;gap:13px}
   .breath{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 50% 45%,var(--accent-deep),var(--accent));flex:none;box-shadow:0 0 0 8px var(--series-soft);animation:breathe 7s ease-in-out infinite}
   @keyframes breathe{0%,100%{transform:scale(.84);opacity:.78}50%{transform:scale(1.04);opacity:1}}
-  h1.title{font-size:1.5rem;margin:0;font-weight:600;letter-spacing:-.01em}
-  .sub{font-size:.72rem;color:var(--ink-soft);letter-spacing:.14em;text-transform:uppercase}
-  .toprite{display:flex;align-items:center;gap:10px}
-  .chip{font-size:.72rem;color:var(--ink-soft);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px}
-  .iconbtn{cursor:pointer;font-size:.9rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 13px;transition:.15s}
-  .iconbtn:hover{border-color:var(--accent)}
-  .lede{color:var(--ink-soft);font-size:1.02rem;margin:2px 0 22px;max-width:70ch}
+  h1.title{font-size:1.3rem;margin:0;font-weight:600;letter-spacing:-.01em}
+  .sub{font-size:.7rem;color:var(--ink-soft);letter-spacing:.14em;text-transform:uppercase}
+  .toprite{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .seg{display:inline-flex;background:var(--series-soft);border-radius:999px;padding:3px}
+  .seg button{border:0;background:transparent;color:var(--ink-soft);font:inherit;font-size:.8rem;font-weight:600;padding:6px 14px;border-radius:999px;cursor:pointer;transition:.15s}
+  .seg button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+  .btn{cursor:pointer;font-size:.82rem;font-weight:600;text-decoration:none;color:#fff;background:linear-gradient(180deg,var(--accent),var(--accent-deep));border:0;border-radius:999px;padding:8px 16px;box-shadow:0 8px 22px -10px var(--accent-deep),inset 0 1px 0 rgba(255,255,255,.18);transition:.15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:none}
+  .btn.ghost:hover{border-color:var(--accent)}
+
+  .hero{margin:4px 0 30px}
+  .hero h2{font-size:2.15rem;line-height:1.12;margin:0 0 14px;font-weight:600;letter-spacing:-.02em;max-width:16ch}
+  .hero p{color:var(--ink-soft);font-size:1.05rem;max-width:66ch;margin:0 0 16px}
+  .badges{display:flex;gap:9px;flex-wrap:wrap}
+  .pill{font-size:.76rem;font-weight:600;color:var(--accent-deep);background:var(--series-soft);border-radius:999px;padding:6px 13px}
 
   .grid{display:grid;gap:16px}
   .kpis{grid-template-columns:repeat(4,1fr)}
   .cols-2{grid-template-columns:1fr 1fr}
   .cols-3{grid-template-columns:repeat(3,1fr)}
-  @media (max-width:820px){ .kpis{grid-template-columns:repeat(2,1fr)} .cols-2,.cols-3{grid-template-columns:1fr} }
+  @media (max-width:860px){ .kpis{grid-template-columns:repeat(2,1fr)} .cols-2,.cols-3{grid-template-columns:1fr} }
   @media (max-width:480px){ .kpis{grid-template-columns:1fr} }
+
+  section{margin:34px 0}
+  .sec-head{margin:0 0 4px}
+  .sec-eyebrow{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-mute);margin:0 0 4px}
+  h3.sec-title{font-size:1.35rem;margin:0 0 4px;font-weight:600;letter-spacing:-.01em}
+  .sec-note{color:var(--ink-soft);font-size:.92rem;margin:0 0 16px;max-width:70ch}
 
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow);backdrop-filter:blur(8px)}
   .card.tile{padding:18px 20px}
@@ -61,49 +76,77 @@
   h2.card-h{font-size:1.02rem;margin:0 0 2px;font-weight:600;letter-spacing:-.01em}
   .card-note{font-size:.8rem;color:var(--ink-soft);margin:0 0 14px}
 
-  .kpi-val{font-size:2.15rem;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--ink);font-variant-numeric:tabular-nums}
-  .kpi-label{font-size:.86rem;color:var(--ink-soft);margin-top:3px}
-  .kpi-delta{display:inline-flex;align-items:center;gap:5px;font-size:.76rem;margin-top:9px;padding:3px 9px;border-radius:999px;background:var(--series-soft);color:var(--accent-deep);font-weight:600}
-  .kpi-delta.flat{background:var(--track);color:var(--ink-soft)}
+  .kpi-val{font-size:2rem;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--ink);font-variant-numeric:tabular-nums}
+  .kpi-label{font-size:.86rem;color:var(--ink);margin-top:4px;font-weight:600}
+  .kpi-sub{font-size:.76rem;color:var(--ink-soft);margin-top:4px}
 
-  /* horizontal bar rows (funnel, leaderboard, capacity) */
-  .row{display:grid;grid-template-columns:130px 1fr auto;align-items:center;gap:12px;margin:9px 0}
-  .row .lab{font-size:.82rem;color:var(--ink-soft)}
-  .row .val{font-size:.82rem;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;text-align:right;min-width:64px}
+  /* roadmap strip */
+  .roadmap{display:flex;gap:8px;flex-wrap:wrap}
+  .rm{flex:1;min-width:78px;border:1px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center;background:var(--card)}
+  .rm .rn{font-size:.72rem;color:var(--ink-mute);font-weight:700}
+  .rm .rs{font-size:.66rem;font-weight:700;margin-top:5px;padding:2px 7px;border-radius:999px;display:inline-block;color:#fff}
+
+  /* sprint cards */
+  .sprint{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:var(--card);box-shadow:var(--shadow)}
+  .sprint .row1{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .sprint .sn{font-size:.72rem;color:var(--ink-mute);font-weight:700;letter-spacing:.06em}
+  .sprint h4{font-size:1.02rem;margin:2px 0 2px;font-weight:600}
+  .sprint .st{font-size:.82rem;color:var(--ink-soft);margin:0 0 10px}
+  .status{font-size:.66rem;font-weight:700;letter-spacing:.03em;padding:3px 9px;border-radius:999px;color:#fff;white-space:nowrap}
+  .outs{list-style:none;padding:0;margin:0}
+  .outs li{font-size:.83rem;color:var(--ink-soft);padding:4px 0 4px 18px;position:relative}
+  .outs li::before{content:'';position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:2px;background:var(--series)}
+  .outs li.na::before{background:var(--ink-mute)}
+
+  /* metric bars */
+  .mrow{display:grid;grid-template-columns:132px 1fr auto;align-items:center;gap:12px;margin:9px 0}
+  .mrow .lab{font-size:.82rem;color:var(--ink-soft)}
+  .mrow .val{font-size:.82rem;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;text-align:right;min-width:70px}
   .track{display:block;height:11px;background:var(--track);border-radius:999px;overflow:hidden}
-  .fill{display:block;height:100%;border-radius:999px;background:var(--series);transition:width .9s cubic-bezier(.2,.7,.2,1)}
+  .fill{display:block;height:100%;border-radius:999px;background:var(--series)}
   .fill.low{background:var(--low)} .fill.mod{background:var(--mod)} .fill.high{background:var(--high)}
   .fill.cap{background:linear-gradient(90deg,var(--accent),var(--accent-deep))}
-
   .legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.78rem;color:var(--ink-soft)}
   .legend span{display:inline-flex;align-items:center;gap:6px}
   .dot{width:9px;height:9px;border-radius:3px;flex:none}
-
-  .badge{font-size:.66rem;font-weight:700;letter-spacing:.03em;padding:2px 8px;border-radius:999px;color:#fff}
+  .badge{font-size:.62rem;font-weight:700;letter-spacing:.03em;padding:2px 7px;border-radius:999px;color:#fff}
   .badge.cert{background:var(--low)}
+  .mini{display:flex;gap:18px;flex-wrap:wrap;margin-top:2px}
+  .mini .m-val{font-size:1.4rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+  .mini .m-lab{font-size:.74rem;color:var(--ink-soft)}
+  .impact-stat{font-size:1.35rem;font-weight:700;letter-spacing:-.01em;color:var(--accent-deep)}
+  .impact-label{font-size:.83rem;color:var(--ink-soft);margin-top:4px}
 
-  .impact-stat{font-size:1.5rem;font-weight:700;letter-spacing:-.01em;color:var(--accent-deep)}
-  .impact-label{font-size:.85rem;color:var(--ink-soft);margin-top:4px}
-
-  .mini{display:flex;gap:18px;flex-wrap:wrap;margin-top:6px}
-  .mini .m-val{font-size:1.5rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
-  .mini .m-lab{font-size:.76rem;color:var(--ink-soft)}
-
-  /* trend svg */
-  svg .axis{stroke:var(--line);stroke-width:1}
   svg .gridline{stroke:var(--line);stroke-width:1;stroke-dasharray:2 4;opacity:.7}
   svg .area{fill:var(--series);opacity:.12}
   svg .linepath{fill:none;stroke:var(--series);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
   svg .marker{fill:var(--surface);stroke:var(--series);stroke-width:2}
-  svg .axlabel{fill:var(--ink-mute);font-size:11px;font-family:ui-sans-serif,system-ui,sans-serif}
   .crosshair{stroke:var(--ink-mute);stroke-width:1;stroke-dasharray:3 3;opacity:0}
+  #tt{position:fixed;pointer-events:none;opacity:0;transform:translate(-50%,-115%);background:var(--ink);color:var(--surface);font-size:.75rem;padding:6px 10px;border-radius:8px;white-space:nowrap;z-index:50;transition:opacity .12s;box-shadow:0 6px 20px -8px rgba(0,0,0,.5)}
 
-  #tt{position:fixed;pointer-events:none;opacity:0;transform:translate(-50%,-115%);background:var(--ink);color:var(--surface);
-      font-size:.75rem;padding:6px 10px;border-radius:8px;white-space:nowrap;z-index:50;transition:opacity .12s;box-shadow:0 6px 20px -8px rgba(0,0,0,.5)}
-  #tt b{font-variant-numeric:tabular-nums}
+  /* capabilities table */
+  .cap{width:100%;border-collapse:collapse;font-size:.88rem}
+  .cap th,.cap td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line)}
+  .cap th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);font-weight:700}
+  .cap td.s{text-align:center}
+  .capbadge{font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:999px;color:#fff}
 
-  footer{margin-top:26px;font-size:.76rem;color:var(--ink-mute);text-align:center;line-height:1.6}
-  .disc{border-top:1px solid var(--line);padding-top:16px}
+  /* demo steps + qa */
+  .step{display:flex;gap:14px;padding:14px 0;border-top:1px dashed var(--line)}
+  .step:first-child{border-top:0}
+  .step .num{flex:none;width:28px;height:28px;border-radius:9px;background:var(--series-soft);color:var(--accent-deep);display:grid;place-items:center;font-weight:700;font-size:.85rem}
+  .step h5{margin:0 0 3px;font-size:.95rem}
+  .step p{margin:0;font-size:.86rem;color:var(--ink-soft)}
+  .step .role{font-size:.72rem;color:var(--ink-mute);font-family:ui-monospace,monospace}
+  details.qa{border:1px solid var(--line);border-radius:12px;background:var(--card);margin-bottom:9px;overflow:hidden}
+  details.qa summary{cursor:pointer;padding:13px 16px;font-weight:600;font-size:.92rem;display:flex;justify-content:space-between;gap:10px;align-items:center;list-style:none}
+  details.qa summary::-webkit-details-marker{display:none}
+  details.qa summary .tag{font-size:.68rem;color:var(--ink-mute);font-weight:600;background:var(--track);padding:3px 9px;border-radius:999px}
+  details.qa[open] summary{border-bottom:1px solid var(--line)}
+  details.qa p{margin:0;padding:13px 16px;font-size:.88rem;color:var(--ink-soft)}
+
+  footer{margin-top:36px;font-size:.76rem;color:var(--ink-mute);text-align:center;line-height:1.7;border-top:1px solid var(--line);padding-top:18px}
+  .hide{display:none !important}
 </style>
 </head>
 <body>
@@ -111,232 +154,268 @@
   <header class="top">
     <div class="brand">
       <div class="breath"></div>
-      <div><h1 class="title serif">AdaB Health</h1><div class="sub">Program Overview</div></div>
+      <div><h1 class="title serif">AdaB Health</h1><div class="sub">AdabX Platform · Overview</div></div>
     </div>
     <div class="toprite">
-      <span class="chip" id="dataChip">Sample data</span>
-      <button class="iconbtn" id="themeBtn" title="Toggle theme">◐ Theme</button>
+      <div class="seg" id="aud">
+        <button data-a="ceo" class="on">Co-founder / CEO</button>
+        <button data-a="investor">Investor</button>
+      </div>
+      <a class="btn" id="liveLink" href="#" target="_blank" rel="noopener">Open live app ↗</a>
+      <button class="btn ghost" id="themeBtn">◐ Theme</button>
     </div>
   </header>
-  <p class="lede serif">A single-screen snapshot of the AdaB Health precision-psychiatry platform for the GPHA Philadelphia &amp; Rescue Mission Trenton partnership — enrollment, outcomes, peer fidelity, street medicine, and capacity at a glance.</p>
 
-  <!-- KPI row -->
-  <div class="grid kpis" id="kpis" style="margin-bottom:16px"></div>
-
-  <!-- funnel + acuity -->
-  <div class="grid cols-2" style="margin-bottom:16px">
-    <div class="card">
-      <div class="eyebrow">Engagement</div>
-      <h2 class="card-h serif">Enrollment funnel</h2>
-      <p class="card-note">How many patients reach each re-assessment window.</p>
-      <div id="funnel"></div>
-    </div>
-    <div class="card">
-      <div class="eyebrow">Outcomes · measurement-based care</div>
-      <h2 class="card-h serif">Average acuity over time</h2>
-      <p class="card-note">Panel-wide acuity index (0–16) — <b>lower is better</b>.</p>
-      <div id="trend"></div>
+  <div class="hero">
+    <h2 class="serif">Recovery is personal. The data that drives it should be too.</h2>
+    <p>AdabX is a precision behavioral-health platform for FQHCs and community organizations — built for the
+       Greater Philadelphia Health Action (GPHA) and Rescue Mission Trenton partnerships. This overview shows
+       <strong>what is actually built</strong>, what is next, and why it matters.</p>
+    <div class="badges">
+      <span class="pill">GPHA Philadelphia</span>
+      <span class="pill">Rescue Mission Trenton</span>
+      <span class="pill">FQHC / PA Medicaid focus</span>
     </div>
   </div>
 
-  <!-- triage + leaderboard + street -->
-  <div class="grid cols-3" style="margin-bottom:16px">
-    <div class="card">
-      <div class="eyebrow">Panel</div>
-      <h2 class="card-h serif">Triage mix</h2>
-      <p class="card-note">Current acuity tier across the panel.</p>
-      <div id="triage"></div>
-    </div>
-    <div class="card">
-      <div class="eyebrow">Workforce</div>
-      <h2 class="card-h serif">Peer fidelity leaderboard</h2>
-      <p class="card-note">Peer Fidelity Score — <b>≥80 is AdaB Certified</b>.</p>
-      <div id="peers"></div>
-    </div>
-    <div class="card">
-      <div class="eyebrow">Outreach</div>
-      <h2 class="card-h serif">Street medicine</h2>
-      <p class="card-note">Field encounters this quarter.</p>
-      <div id="street"></div>
-    </div>
-  </div>
+  <div class="grid kpis" id="stats"></div>
 
-  <!-- capacity + impact -->
-  <div class="grid cols-2" style="margin-bottom:16px">
-    <div class="card">
-      <div class="eyebrow">Care coordination</div>
-      <h2 class="card-h serif">Resource capacity</h2>
-      <p class="card-note">Utilization against configured capacity.</p>
-      <div id="capacity"></div>
-    </div>
-    <div class="card">
-      <div class="eyebrow">Why it matters</div>
-      <h2 class="card-h serif">GPHA impact snapshot</h2>
-      <p class="card-note">Headline wins for a resource-constrained, high-need population.</p>
-      <div class="grid cols-3" id="impact" style="gap:14px"></div>
-    </div>
-  </div>
+  <section>
+    <div class="sec-eyebrow">Roadmap</div>
+    <h3 class="sec-title serif">10-sprint plan · status at a glance</h3>
+    <p class="sec-note">Honest build status against the codebase — <b style="color:var(--low)">Live</b> = shipped &amp; tested,
+       <b style="color:var(--mod)">Foundation</b> = data layer built (intelligence pending real data), <b style="color:var(--ink-mute)">Next</b> = planned.</p>
+    <div class="roadmap" id="roadmap"></div>
+  </section>
 
-  <footer class="disc">
-    <strong>Illustrative sample data</strong> — figures are representative, not a live feed or real patient records.
-    AdaB Health is a reflective care-navigation tool, not a diagnostic instrument.<br>
-    “Recovery is personal. Care should be too.”
+  <section>
+    <div class="card" id="talking"></div>
+  </section>
+
+  <section>
+    <div class="sec-eyebrow">What's built</div>
+    <h3 class="sec-title serif">Sprints</h3>
+    <p class="sec-note">Seven sprints are live and tested; Sprint 2 (billing) is deliberately deferred; Sprints 9–10 have their
+       data foundations built with the AI/optimizer as the next build. Each card reflects the real code.</p>
+    <div class="grid cols-2" id="sprints"></div>
+  </section>
+
+  <section>
+    <div class="sec-eyebrow">Program at a glance · illustrative</div>
+    <h3 class="sec-title serif">The command center</h3>
+    <p class="sec-note">A preview of the admin overview at scale. <b>Figures below are illustrative sample data</b> — the same
+       views run live on real data inside the product (admin "Population overview").</p>
+    <div class="grid kpis" id="mkpis" style="margin-bottom:16px"></div>
+    <div class="grid cols-2" style="margin-bottom:16px">
+      <div class="card"><div class="eyebrow">Engagement</div><h2 class="card-h serif">Enrollment funnel</h2><p class="card-note">Patients reaching each re-assessment window.</p><div id="funnel"></div></div>
+      <div class="card"><div class="eyebrow">Outcomes · measurement-based care</div><h2 class="card-h serif">Average acuity over time</h2><p class="card-note">Panel acuity index (0–16) — <b>lower is better</b>.</p><div id="trend"></div></div>
+    </div>
+    <div class="grid cols-3" style="margin-bottom:16px">
+      <div class="card"><div class="eyebrow">Panel</div><h2 class="card-h serif">Triage mix</h2><p class="card-note">Current acuity tier.</p><div id="triage"></div></div>
+      <div class="card"><div class="eyebrow">Workforce</div><h2 class="card-h serif">Peer fidelity</h2><p class="card-note">PFS — ≥80 is AdaB Certified.</p><div id="peers"></div></div>
+      <div class="card"><div class="eyebrow">Outreach</div><h2 class="card-h serif">Street medicine</h2><p class="card-note">Field encounters this quarter.</p><div id="street"></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-eyebrow">Positioning</div>
+    <h3 class="sec-title serif">Capability status</h3>
+    <p class="sec-note">What AdabX has shipped vs. what's on the roadmap. Status reflects our codebase; competitor comparisons are directional.</p>
+    <div class="card" style="overflow-x:auto"><table class="cap" id="captable"></table></div>
+  </section>
+
+  <section>
+    <div class="sec-eyebrow">Run of show</div>
+    <h3 class="sec-title serif">How to demo it — <span id="demoAud">co-founder / CEO</span></h3>
+    <p class="sec-note">Drive the <b>live app</b> in this order. Every step points at a feature that actually exists.</p>
+    <div class="card" id="demo"></div>
+  </section>
+
+  <section>
+    <div class="sec-eyebrow">Prepared answers</div>
+    <h3 class="sec-title serif">Questions &amp; objections</h3>
+    <div id="qa"></div>
+  </section>
+
+  <footer>
+    <strong>Honesty note:</strong> sprint statuses and capabilities above reflect the actual codebase. The "command center"
+    figures are illustrative sample data, clearly marked. AdaB Health is a reflective care-navigation tool, not a diagnostic instrument.<br>
+    AdaB Health · AdabX Platform · Confidential &amp; Proprietary — “Recovery is personal. Care should be too.”
   </footer>
 </div>
-
 <div id="tt"></div>
 
 <script>
-/* ============================ sample data (edit here) ============================ */
-const DATA = {
-  kpis: [
-    { value:'1,284', label:'Patients enrolled',   delta:'▲ 18% YoY',            good:true  },
-    { value:'73%',   label:'90-day retention',     delta:'▲ 6 pts',             good:true  },
-    { value:'412',   label:'High-risk in care',    delta:'32% of panel',        good:null  },
-    { value:'83%',   label:'Outcomes improving',   delta:'acuity ↓ since intake', good:true }
+/* ===================== configurable links ===================== */
+const LINKS = {
+  liveApp: '#',   // ← set to your deployed Replit URL, e.g. https://your-app.replit.app
+  github:  'https://github.com/faarisaahmed/still-survey'
+};
+
+/* ===================== real build status (verified against the code) ===================== */
+const STATS = [
+  { v:'7 / 10', l:'Sprints live',        s:'Sprint 2 deferred · 9–10 foundations built' },
+  { v:'38',     l:'Automated tests',      s:'API + scoring, passing on every build' },
+  { v:'4',      l:'User roles',           s:'Patient · Peer · Clinician · Admin' },
+  { v:'3',      l:'Compliance layers',    s:'42 CFR Part 2 · HIPAA audit · FHIR R4' }
+];
+
+const STATUS = {
+  done:       { label:'Live',       color:'var(--low)' },
+  foundation: { label:'Foundation', color:'var(--mod)' },
+  next:       { label:'Next',       color:'var(--ink-mute)' }
+};
+
+const SPRINTS = [
+  { n:1, t:'Backend Foundation', st:'Schema, API, auth & offline sync', s:'done', outs:[
+    'Postgres schema — 12 tables (JSON fallback)','POST /api/intake/submit returns scored JSON',
+    'JWT auth, 4 roles + patient session codes','Offline sync (service worker + queue)','42 CFR Part 2 consent + enforcement'] },
+  { n:2, t:'PA Medicaid Billing Engine', st:'Revenue intelligence for PA MCOs', s:'next', outs:[
+    'Deferred — needs real payer rules, a verified fee schedule, and PROMISe/NPI credentials (na)',
+    'A minimal prior-auth store exists; the full engine (MCO router, 837I export) is the next revenue build once a design partner + credentials are in place (na)'] },
+  { n:3, t:'Peer Specialist Tools', st:'Mobile dashboard, SMS check-ins & fidelity', s:'done', outs:[
+    'Mobile-first peer dashboard','Daily SMS check-ins with craving alerts','12-item fidelity observation form','Peer Fidelity Score + AdaB Certified'] },
+  { n:4, t:'Precision Psychiatry Engine', st:'Longitudinal tracking, PPI & analytics', s:'done', outs:[
+    'Longitudinal score tracking','Precision Psychiatry Index (PPI)','Domain + population analytics','30/60/90-day re-assessment reminders'] },
+  { n:5, t:'EHR Integration & Compliance', st:'FHIR R4, audit log & UDS', s:'done', outs:[
+    'FHIR R4 patient + observation export','HIPAA audit log for all PHI access','5-type consent management','UDS (HRSA) report export','PDMP query — documented stub (na)'] },
+  { n:6, t:'Q-Adab Longitudinal Measurement', st:'Measurement-based care', s:'done', outs:[
+    'Outcome tracking over time','Dual-line acuity + recovery-capital trajectory chart','Plain-language "since intake" improving/declining summary'] },
+  { n:7, t:'Senior-Friendly Access & Scheduling', st:'Low-tech intake path', s:'done', outs:[
+    'Phone / walk-in appointment-request queue','Mark scheduled / cancel workflow','IVR telephony documented — external, deferred (na)'] },
+  { n:8, t:'Street Medicine Mobile Toolkit', st:'Field-ready outreach tools', s:'done', outs:[
+    'GPS-enabled encounter logging','4-tap rapid field assessment','Referral + follow-up flags','Every access in the HIPAA audit scope'] },
+  { n:9, t:'Predictive Risk Engine', st:'Relapse prediction & intervention', s:'foundation', outs:[
+    'Built: model-ready feature pipeline (/api/ml/features)','Next: trained ML model + /predict endpoints, on real labelled outcomes (na)','Bias-checking + clinician-in-the-loop by design (na)'] },
+  { n:10, t:'Resource Optimization & Coordination', st:'Intelligent matching', s:'foundation', outs:[
+    'Built: resource inventory API + admin management UI','Next: matching/optimization + calendar automation, on real constraints & credentials (na)'] }
+];
+
+const TALKING = {
+  ceo: { who:'Co-founder / CEO',
+    body:'This view emphasizes clinical workflow, patient impact, and care-team experience — mission alignment and product coherence for GPHA and Rescue Mission deployments.',
+    points:['Gentle, trauma-informed intake that works offline on a $150 tablet','Measurement-based care: prove patients get better, visit over visit',
+            'Peers as a measured, credentialed workforce (Fidelity Score)','Reaches people others miss — phone, walk-in, and street medicine'] },
+  investor: { who:'Investor',
+    body:'This view emphasizes the compliance moat, the data flywheel, and the algorithmic roadmap — why AdabX is defensible and where the value compounds.',
+    points:['42 CFR Part 2 + HIPAA + FHIR built in from day one — the gate to Medicaid contracts','Every assessment is structured training data — the model foundation is already live',
+            'Billing engine is scoped revenue infrastructure, next once a design partner lands','Predictive risk + resource optimization: the algorithmic layer competitors lack'] }
+};
+
+const DEMO = {
+  ceo: [
+    ['patient1@demo','Open with the patient journey','Start an intake. Show the 42 CFR consent, then a couple of gentle, voice-guided questions. Note it works offline and never shows the patient a score.'],
+    ['clinician@demo','Show the care team’s view','Open a patient with 2+ visits — the acuity + recovery-capital trajectory chart tells the recovery story. Point out the PPI risk badge and re-assessment reminders.'],
+    ['peer@demo','Peer specialist tools','On mobile: caseload, today’s check-in scores, the Peer Fidelity Score, and the street-medicine field toolkit with GPS.'],
+    ['admin@demo','Close with scale + roadmap','Population overview and compliance card, then frame Sprints 9–10 as the natural next step — the intelligence layer built on everything already shipping.']
   ],
-  funnel: [
-    { stage:'Enrolled',           n:1284 },
-    { stage:'Completed intake',   n:1176 },
-    { stage:'30-day re-assess',   n:934  },
-    { stage:'60-day',             n:721  },
-    { stage:'90-day',             n:588  }
-  ],
-  acuity: [ ['Jan',10.4],['Feb',9.9],['Mar',9.5],['Apr',8.8],['May',8.3],['Jun',7.9] ],
-  triage: [ ['Low',596,'low'], ['Moderate',476,'mod'], ['High',412,'high'] ],
-  peers: [ ['M. Alvarez',88], ['D. Chen',84], ['R. Okafor',81], ['S. Patel',76], ['J. Brooks',69] ],
-  street: { encounters:342, referrals:214, followups:118 },
-  capacity: [ ['Clinicians',38,45], ['Peer specialists',22,24], ['Case managers',15,20], ['Program beds',52,60] ],
-  impact: [
-    ['months → same week', 'Wait to first contact, via low-tech phone/walk-in intake'],
-    ['214 referrals',      'SDOH & clinical referrals generated from street-medicine encounters'],
-    ['100%',               '42 CFR Part 2 consent captured at every intake']
+  investor: [
+    ['admin@demo','Lead with compliance + the flywheel','Show the 42 CFR consent flow and the HIPAA audit log — the gate to Medicaid contracts, built in from day one. Then the population analytics: every assessment is training data.'],
+    ['clinician@demo','Show measurement-based care','The longitudinal trajectory chart is the outcomes proof — and the raw material for the Sprint 9 model. The moat deepens with every patient.'],
+    ['peer@demo','Show the reach','Street-medicine toolkit + low-tech scheduling: AdabX serves the hardest-to-reach population, where reimbursement and outcomes are hardest to capture.'],
+    ['—','Present the roadmap honestly','Walk the capability table. Billing (Sprint 2) is scoped next revenue; predictive risk + optimization (9–10) have foundations live. No competitor offers this full stack.']
   ]
 };
 
-/* ============================ helpers ============================ */
+const CAPS = [
+  ['Longitudinal outcome tracking','yes'], ['Offline-first mobile intake','yes'],
+  ['Peer tools + Fidelity Score','yes'], ['42 CFR Part 2 compliance','yes'],
+  ['FHIR R4 EHR integration','yes'], ['Street-medicine field toolkit','yes'],
+  ['Low-tech phone / walk-in scheduling','yes'], ['PA Medicaid billing engine','next'],
+  ['Predictive risk AI','foundation'], ['Algorithmic resource optimization','foundation']
+];
+const CAPBADGE = { yes:{t:'Live',c:'var(--low)'}, foundation:{t:'Foundation',c:'var(--mod)'}, next:{t:'Next',c:'var(--ink-mute)'} };
+
+const QA = [
+  ['Is the predictive-risk AI built yet?','Roadmap','The data foundation is — a model-ready feature pipeline runs today. The trained model is a deliberate fast-follow: we build and validate it on real labelled outcomes once a design partner is live, with bias-checking and clinician oversight. Shipping a black box before we have data would be irresponsible.'],
+  ['Is the Medicaid billing engine live?','Revenue','Not yet — it’s scoped as the next revenue build. It depends on payer rules and PROMISe credentials we obtain with a design partner. The compliance and data layers it plugs into (42 CFR, audit, FHIR) are already built and tested.'],
+  ['What happens to patient data offline in the field?','Reliability','Intake works fully offline — responses queue in the browser and sync automatically on reconnect. Street-medicine encounters capture on-device and upload when back in range.'],
+  ['How is sensitive SUD data protected?','Compliance','42 CFR Part 2 consent is captured before any substance-use question, enforced at the API, and every PHI access is written to an immutable audit log — the requirement for PA Medicaid credentialing.'],
+  ['When is it ready for a clinical pilot?','Timeline','The core platform — intake, scoring, care-team dashboards, and compliance exports — is built and testable now. A pilot is gated on a design-partner agreement, not on core engineering.']
+];
+
+/* ===================== illustrative metrics ===================== */
+const DATA = {
+  mkpis: [
+    { value:'1,284', label:'Patients enrolled', sub:'▲ 18% YoY' },
+    { value:'73%',   label:'90-day retention',   sub:'▲ 6 pts' },
+    { value:'412',   label:'High-risk in care',  sub:'32% of panel' },
+    { value:'83%',   label:'Outcomes improving', sub:'acuity ↓ since intake' }
+  ],
+  funnel: [ ['Enrolled',1284],['Completed intake',1176],['30-day re-assess',934],['60-day',721],['90-day',588] ],
+  acuity: [ ['Jan',10.4],['Feb',9.9],['Mar',9.5],['Apr',8.8],['May',8.3],['Jun',7.9] ],
+  triage: [ ['Low',596,'low'],['Moderate',476,'mod'],['High',412,'high'] ],
+  peers:  [ ['M. Alvarez',88],['D. Chen',84],['R. Okafor',81],['S. Patel',76],['J. Brooks',69] ],
+  street: { encounters:342, referrals:214, followups:118 }
+};
+
+/* ===================== helpers ===================== */
 const $ = id => document.getElementById(id);
-const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt = n => n.toLocaleString('en-US');
+const bar = (lab,val,pct,cls)=>`<div class="mrow"><span class="lab">${esc(lab)}</span><span class="track"><span class="fill ${cls||''}" style="width:${Math.max(2,pct)}%"></span></span><span class="val">${val}</span></div>`;
 
-function barRow(lab, valText, pct, cls){
-  return `<div class="row">
-    <span class="lab">${esc(lab)}</span>
-    <span class="track"><span class="fill ${cls||''}" style="width:${Math.max(2,pct)}%"></span></span>
-    <span class="val">${valText}</span>
-  </div>`;
-}
+let audience = 'ceo';
 
-/* ============================ render ============================ */
-function renderKpis(){
-  $('kpis').innerHTML = DATA.kpis.map(k => `
-    <div class="card tile">
-      <div class="kpi-val">${esc(k.value)}</div>
-      <div class="kpi-label">${esc(k.label)}</div>
-      <span class="kpi-delta ${k.good===null?'flat':''}">${esc(k.delta)}</span>
-    </div>`).join('');
+/* ===================== render: narrative ===================== */
+function renderStats(){ $('stats').innerHTML = STATS.map(s=>`<div class="card tile"><div class="kpi-val">${esc(s.v)}</div><div class="kpi-label">${esc(s.l)}</div><div class="kpi-sub">${esc(s.s)}</div></div>`).join(''); }
+function renderRoadmap(){ $('roadmap').innerHTML = SPRINTS.map(s=>{ const st=STATUS[s.s]; return `<div class="rm" title="${esc(s.t)}"><div class="rn">S${s.n}</div><div class="rs" style="background:${st.color}">${st.label}</div></div>`; }).join(''); }
+function renderSprints(){
+  $('sprints').innerHTML = SPRINTS.map(s=>{ const st=STATUS[s.s];
+    const outs = s.outs.map(o=>{ const na=/\(na\)$/.test(o); return `<li class="${na?'na':''}">${esc(o.replace(/\s*\(na\)$/,''))}</li>`; }).join('');
+    return `<div class="sprint"><div class="row1"><div><div class="sn">SPRINT ${s.n}</div><h4 class="serif">${esc(s.t)}</h4><div class="st">${esc(s.st)}</div></div><span class="status" style="background:${st.color}">${st.label}</span></div><ul class="outs">${outs}</ul></div>`; }).join('');
 }
-function renderFunnel(){
-  const top = DATA.funnel[0].n;
-  $('funnel').innerHTML = DATA.funnel.map(f => {
-    const pct = f.n/top*100, ret = Math.round(f.n/top*100);
-    return barRow(f.stage, `${fmt(f.n)} · ${ret}%`, pct);
-  }).join('');
+function renderTalking(){
+  const t = TALKING[audience];
+  $('talking').innerHTML = `<div class="eyebrow">Viewing as</div><h2 class="card-h serif">${esc(t.who)}</h2><p class="card-note">${esc(t.body)}</p>
+    <div class="grid cols-2">${t.points.map(p=>`<div style="display:flex;gap:9px;font-size:.9rem"><span style="color:var(--accent-deep);font-weight:700">→</span><span>${esc(p)}</span></div>`).join('')}</div>`;
 }
-function renderTriage(){
-  const total = DATA.triage.reduce((a,t)=>a+t[1],0);
-  $('triage').innerHTML = DATA.triage.map(([lab,n,cls]) =>
-    barRow(lab, `${fmt(n)} · ${Math.round(n/total*100)}%`, n/total*100, cls)
-  ).join('') + `<div class="legend">
-    <span><i class="dot" style="background:var(--low)"></i>Low</span>
-    <span><i class="dot" style="background:var(--mod)"></i>Moderate</span>
-    <span><i class="dot" style="background:var(--high)"></i>High</span></div>`;
+function renderCaps(){
+  $('captable').innerHTML = `<thead><tr><th>Capability</th><th class="s">AdabX</th></tr></thead><tbody>${
+    CAPS.map(([name,st])=>{ const b=CAPBADGE[st]; return `<tr><td>${esc(name)}</td><td class="s"><span class="capbadge" style="background:${b.c}">${b.t}</span></td></tr>`; }).join('')}</tbody>`;
 }
-function renderPeers(){
-  const max = Math.max(...DATA.peers.map(p=>p[1]));
-  $('peers').innerHTML = DATA.peers.map(([name,pfs]) => {
-    const cert = pfs>=80 ? ` <span class="badge cert">CERTIFIED</span>` : '';
-    return `<div class="row">
-      <span class="lab">${esc(name)}</span>
-      <span class="track"><span class="fill" style="width:${pfs/max*100}%"></span></span>
-      <span class="val">${pfs}${cert}</span></div>`;
-  }).join('');
+function renderDemo(){
+  $('demoAud').textContent = audience==='ceo' ? 'co-founder / CEO' : 'investor';
+  $('demo').innerHTML = DEMO[audience].map((s,i)=>`<div class="step"><div class="num">${i+1}</div><div><h5>${esc(s[1])} <span class="role">${esc(s[0])}</span></h5><p>${esc(s[2])}</p></div></div>`).join('');
 }
-function renderStreet(){
-  const s = DATA.street;
-  $('street').innerHTML = `<div class="mini">
-      <div><div class="m-val">${fmt(s.encounters)}</div><div class="m-lab">Encounters</div></div>
-      <div><div class="m-val">${fmt(s.referrals)}</div><div class="m-lab">Referrals made</div></div>
-      <div><div class="m-val">${fmt(s.followups)}</div><div class="m-lab">Follow-ups flagged</div></div>
-    </div>
-    <div style="margin-top:14px">
-      ${barRow('Referral rate', Math.round(s.referrals/s.encounters*100)+'%', s.referrals/s.encounters*100)}
-      ${barRow('Follow-up rate', Math.round(s.followups/s.encounters*100)+'%', s.followups/s.encounters*100, 'mod')}
-    </div>`;
-}
-function renderCapacity(){
-  $('capacity').innerHTML = DATA.capacity.map(([name,used,cap]) =>
-    barRow(name, `${used} / ${cap}`, used/cap*100, 'cap')
-  ).join('');
-}
-function renderImpact(){
-  $('impact').innerHTML = DATA.impact.map(([stat,label]) =>
-    `<div><div class="impact-stat serif">${esc(stat)}</div><div class="impact-label">${esc(label)}</div></div>`
-  ).join('');
-}
+function renderQA(){ $('qa').innerHTML = QA.map(([q,tag,a])=>`<details class="qa"><summary>${esc(q)}<span class="tag">${esc(tag)}</span></summary><p>${esc(a)}</p></details>`).join(''); }
 
-/* ---- acuity trend: SVG line (fixed viewBox, uniform scale) + HTML axis labels ---- */
+/* ===================== render: metrics ===================== */
+function renderMkpis(){ $('mkpis').innerHTML = DATA.mkpis.map(k=>`<div class="card tile"><div class="kpi-val">${esc(k.value)}</div><div class="kpi-label">${esc(k.label)}</div><div class="kpi-sub">${esc(k.sub)}</div></div>`).join(''); }
+function renderFunnel(){ const top=DATA.funnel[0][1]; $('funnel').innerHTML = DATA.funnel.map(([s,n])=>bar(s,`${fmt(n)} · ${Math.round(n/top*100)}%`,n/top*100)).join(''); }
+function renderTriage(){ const tot=DATA.triage.reduce((a,t)=>a+t[1],0); $('triage').innerHTML = DATA.triage.map(([l,n,c])=>bar(l,`${fmt(n)} · ${Math.round(n/tot*100)}%`,n/tot*100,c)).join('')+`<div class="legend"><span><i class="dot" style="background:var(--low)"></i>Low</span><span><i class="dot" style="background:var(--mod)"></i>Moderate</span><span><i class="dot" style="background:var(--high)"></i>High</span></div>`; }
+function renderPeers(){ const mx=Math.max(...DATA.peers.map(p=>p[1])); $('peers').innerHTML = DATA.peers.map(([nm,p])=>`<div class="mrow"><span class="lab">${esc(nm)}</span><span class="track"><span class="fill" style="width:${p/mx*100}%"></span></span><span class="val">${p}${p>=80?' <span class="badge cert">CERT</span>':''}</span></div>`).join(''); }
+function renderStreet(){ const s=DATA.street; $('street').innerHTML = `<div class="mini"><div><div class="m-val">${fmt(s.encounters)}</div><div class="m-lab">Encounters</div></div><div><div class="m-val">${fmt(s.referrals)}</div><div class="m-lab">Referrals</div></div><div><div class="m-val">${fmt(s.followups)}</div><div class="m-lab">Follow-ups</div></div></div><div style="margin-top:12px">${bar('Referral rate',Math.round(s.referrals/s.encounters*100)+'%',s.referrals/s.encounters*100)}${bar('Follow-up rate',Math.round(s.followups/s.encounters*100)+'%',s.followups/s.encounters*100,'mod')}</div>`; }
 function renderTrend(){
-  const data = DATA.acuity, W = 320, H = 130, padL = 8, padR = 8, padT = 12, padB = 12;
-  const xs = data.map((_,i)=> padL + i*(W-padL-padR)/(data.length-1));
-  const vals = data.map(d=>d[1]);
-  const lo = Math.min(...vals)-1, hi = Math.max(...vals)+1;
-  const y = v => padT + (1-(v-lo)/(hi-lo))*(H-padT-padB);
-  const pts = data.map((d,i)=>[xs[i], y(d[1])]);
-  const line = pts.map((p,i)=>`${i?'L':'M'}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
-  const area = `${line} L${xs[xs.length-1].toFixed(1)},${H-padB} L${padL},${H-padB} Z`;
-  const markers = pts.map((p,i)=>`<circle class="marker" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="4" data-i="${i}"/>`).join('');
-  $('trend').innerHTML = `
-    <svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block;overflow:visible" id="trendSvg">
-      <line class="gridline" x1="${padL}" y1="${padT}" x2="${W-padR}" y2="${padT}"/>
-      <line class="gridline" x1="${padL}" y1="${padT+(H-padT-padB)/2}" x2="${W-padR}" y2="${padT+(H-padT-padB)/2}"/>
-      <path class="area" d="${area}"/>
-      <path class="linepath" d="${line}" vector-effect="non-scaling-stroke"/>
-      <line class="crosshair" id="cross" y1="${padT}" y2="${H-padB}"/>
-      ${markers}
-    </svg>
-    <div style="display:flex;justify-content:space-between;margin:2px 4px 0;font-size:.72rem;color:var(--ink-mute)">
-      ${data.map(d=>`<span>${d[0]}</span>`).join('')}
-    </div>
-    <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:.78rem;color:var(--ink-soft)">
-      <span>Jan avg <b>${vals[0].toFixed(1)}</b></span>
-      <span style="color:var(--low);font-weight:600">▼ ${(vals[0]-vals[vals.length-1]).toFixed(1)} pts improvement</span>
-      <span>Jun avg <b>${vals[vals.length-1].toFixed(1)}</b></span>
-    </div>`;
-  // hover
-  const svg = $('trendSvg'), cross = $('cross'), tt = $('tt');
-  svg.querySelectorAll('.marker').forEach(m => {
-    m.addEventListener('mouseenter', () => {
-      const i = +m.dataset.i, r = m.getBoundingClientRect();
-      cross.setAttribute('x1', xs[i]); cross.setAttribute('x2', xs[i]); cross.style.opacity = 1;
-      tt.innerHTML = `${DATA.acuity[i][0]} · avg acuity <b>${DATA.acuity[i][1].toFixed(1)}</b>`;
-      tt.style.left = (r.left + r.width/2) + 'px'; tt.style.top = r.top + 'px'; tt.style.opacity = 1;
-    });
-    m.addEventListener('mouseleave', () => { cross.style.opacity = 0; tt.style.opacity = 0; });
-  });
+  const data=DATA.acuity, W=320,H=130,padL=8,padR=8,padT=12,padB=12;
+  const xs=data.map((_,i)=>padL+i*(W-padL-padR)/(data.length-1)), vals=data.map(d=>d[1]);
+  const lo=Math.min(...vals)-1, hi=Math.max(...vals)+1, y=v=>padT+(1-(v-lo)/(hi-lo))*(H-padT-padB);
+  const pts=data.map((d,i)=>[xs[i],y(d[1])]);
+  const line=pts.map((p,i)=>`${i?'L':'M'}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+  const area=`${line} L${xs[xs.length-1].toFixed(1)},${H-padB} L${padL},${H-padB} Z`;
+  const markers=pts.map((p,i)=>`<circle class="marker" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="4" data-i="${i}"/>`).join('');
+  $('trend').innerHTML=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="display:block;overflow:visible" id="trendSvg">
+    <line class="gridline" x1="${padL}" y1="${padT}" x2="${W-padR}" y2="${padT}"/><line class="gridline" x1="${padL}" y1="${padT+(H-padT-padB)/2}" x2="${W-padR}" y2="${padT+(H-padT-padB)/2}"/>
+    <path class="area" d="${area}"/><path class="linepath" d="${line}" vector-effect="non-scaling-stroke"/><line class="crosshair" id="cross" y1="${padT}" y2="${H-padB}"/>${markers}</svg>
+    <div style="display:flex;justify-content:space-between;margin:2px 4px 0;font-size:.72rem;color:var(--ink-mute)">${data.map(d=>`<span>${d[0]}</span>`).join('')}</div>
+    <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:.78rem;color:var(--ink-soft)"><span>Jan <b>${vals[0].toFixed(1)}</b></span><span style="color:var(--low);font-weight:600">▼ ${(vals[0]-vals[vals.length-1]).toFixed(1)} pts improvement</span><span>Jun <b>${vals[vals.length-1].toFixed(1)}</b></span></div>`;
+  const svg=$('trendSvg'),cross=$('cross'),tt=$('tt');
+  svg.querySelectorAll('.marker').forEach(m=>{ m.addEventListener('mouseenter',()=>{const i=+m.dataset.i,r=m.getBoundingClientRect();cross.setAttribute('x1',xs[i]);cross.setAttribute('x2',xs[i]);cross.style.opacity=1;tt.innerHTML=`${DATA.acuity[i][0]} · avg acuity <b>${DATA.acuity[i][1].toFixed(1)}</b>`;tt.style.left=(r.left+r.width/2)+'px';tt.style.top=r.top+'px';tt.style.opacity=1;}); m.addEventListener('mouseleave',()=>{cross.style.opacity=0;tt.style.opacity=0;}); });
 }
 
-function renderAll(){ renderKpis(); renderFunnel(); renderTriage(); renderPeers(); renderStreet(); renderCapacity(); renderImpact(); renderTrend(); }
+function renderAll(){ renderStats();renderRoadmap();renderSprints();renderTalking();renderCaps();renderDemo();renderQA();
+  renderMkpis();renderFunnel();renderTriage();renderPeers();renderStreet();renderTrend(); }
 
-/* ============================ theme ============================ */
-(function initTheme(){
-  const root = document.documentElement, saved = localStorage.getItem('pitch-theme');
-  if (saved === 'dark' || (!saved && matchMedia('(prefers-color-scheme: dark)').matches)) root.classList.add('dark');
-  $('themeBtn').onclick = () => {
-    root.classList.toggle('dark');
-    localStorage.setItem('pitch-theme', root.classList.contains('dark') ? 'dark' : 'light');
-  };
-})();
+/* ===================== wiring ===================== */
+document.querySelectorAll('#aud button').forEach(b=> b.onclick=()=>{
+  audience=b.dataset.a;
+  document.querySelectorAll('#aud button').forEach(x=>x.classList.toggle('on',x===b));
+  renderTalking(); renderDemo();
+});
+(function(){ const a=$('liveLink'); a.href=LINKS.liveApp; if(LINKS.liveApp==='#'){ a.textContent='Set live app URL'; a.style.opacity=.6; } })();
+(function initTheme(){ const root=document.documentElement, saved=localStorage.getItem('pitch-theme');
+  if(saved==='dark'||(!saved&&matchMedia('(prefers-color-scheme: dark)').matches)) root.classList.add('dark');
+  $('themeBtn').onclick=()=>{ root.classList.toggle('dark'); localStorage.setItem('pitch-theme', root.classList.contains('dark')?'dark':'light'); }; })();
 
 renderAll();
 </script>
